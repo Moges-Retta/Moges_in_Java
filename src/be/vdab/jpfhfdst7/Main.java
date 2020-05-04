@@ -14,5 +14,7 @@ public class Main {
         System.out.println("Saldo van spaarrekening 2 " + spaar2.getRekeningNummer() + " is " + spaar2.getSaldo() );
         spaar2.afhalen(5.0);
         System.out.println("Saldo van spaarrekening 2 " + spaar2.getRekeningNummer() + " is " + spaar2.getSaldo() );
+        var intrestPercentage = Spaarrekening.getIntrest();
+        System.out.println(intrestPercentage);
     }
 }
