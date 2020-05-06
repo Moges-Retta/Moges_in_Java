@@ -10,5 +10,17 @@ public class Spaarrekening extends Rekening{
         super(reknr, saldo);
         Spaarrekening.intrest = intrest;
     }
+    public static double getIntrest(){
+        return intrest;
+    }
+    @Override
+    public void afhalen(double bedrag) {
+        if (bedrag > 0.0) {
+            var testSaldo = getSaldo()- bedrag;
+            if (testSaldo >= 0) {
+                super.afhalen(bedrag);
+            }
+        }
+    }
 }
 
