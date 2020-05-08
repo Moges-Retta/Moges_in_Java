@@ -8,10 +8,15 @@ public class Spaarrekening extends Rekening{
    }
     public Spaarrekening(String reknr, double intrest, double saldo) {
         super(reknr, saldo);
-        Spaarrekening.intrest = intrest;
+        setIntrest(intrest);
     }
     public static double getIntrest(){
         return intrest;
+    }
+    public final void setIntrest(double intrest) {
+        if (intrest > 0.0) {
+            Spaarrekening.intrest = intrest;
+        }
     }
     @Override
     public void afhalen(double bedrag) {
@@ -21,6 +26,14 @@ public class Spaarrekening extends Rekening{
                 super.afhalen(bedrag);
             }
         }
+    }
+    @Override
+    public String toString() {
+        return super.toString() + ", " + intrest;
+    }
+    @Override
+    public double berekenIntrest() {
+        return getSaldo() * intrest / 100;
     }
 }
 

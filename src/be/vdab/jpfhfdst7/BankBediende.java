@@ -23,5 +23,26 @@ public class BankBediende {
         System.out.println( "MaxKrediet van de zichtrekening is: " + zicht.getMaxKrediet() );
         zicht.afhalen(900);
         System.out.println( "Saldo van de zichtrekening (na poging " + "afhalen 900): " + zicht.getSaldo());
+        System.out.println(spaar);
+        System.out.println(zicht);
+        System.out.println("Intrest op de spaarrekening: " + spaar.berekenIntrest());
+        System.out.println("Intrest op de zichtrekening: " + zicht.berekenIntrest());
+
+        //toepassing polymorfisme var rekeningen = new Rekening[4];
+        var rekeningen = new Rekening[4];
+        rekeningen[0] = new Spaarrekening("BE11 2233 4455 6677", 1.5);
+        rekeningen[1] = new Spaarrekening("BE99 8877 6655 4433", 1.5);
+        rekeningen[2] = new Zichtrekening("BE19 2837 4655 6473", 2000);
+        rekeningen[3] = new Zichtrekening("BE91 8273 6455 4637", 1500);
+        rekeningen[0].storten(500.0);
+        rekeningen[1].storten(550.0);
+        rekeningen[1].afhalen(120.0);
+        rekeningen[2].storten(200.0);
+        rekeningen[2].afhalen(20.0);
+        rekeningen[3].storten(300.0);
+        var i = 0; while (i < rekeningen.length && rekeningen[i] != null) {
+            System.out.println("Saldo van de rekening: " + rekeningen[i].getSaldo());
+            i++;
+        }
     }
 }

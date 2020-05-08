@@ -1,20 +1,24 @@
 package be.vdab.jpfhfdst7;
 
-public class Rekening {
+public abstract class Rekening {
     private String rekeningNummer;
     private double saldo;
     public Rekening(String rekeningNummer) {
-        this.rekeningNummer = rekeningNummer;
+        setRekeningNummer(rekeningNummer);
     }
     public Rekening(String rekeningNummer, double saldo) {
-        this.rekeningNummer = rekeningNummer;
-        this.saldo = saldo;
+        setRekeningNummer(rekeningNummer);
+        if (saldo >= 0) {
+            this.saldo = saldo;
+        }
     }
     public String getRekeningNummer() {
         return rekeningNummer;
     }
-    public void setRekeningNummer(String reknr) {
-        rekeningNummer = reknr;
+    public final void setRekeningNummer(String reknr) {
+        if (reknr != null && !reknr.isEmpty() ) {
+            rekeningNummer = reknr;
+        }
     }
     public double getSaldo() {
         return saldo;
@@ -37,6 +41,16 @@ public class Rekening {
     }
     private boolean checkBedrag(double bedrag) {
         return bedrag > 0.0;
+    }
+    @Override public String toString() { return rekeningNummer + ", " + saldo; }
+    public abstract double berekenIntrest();
+
+    @Override public boolean equals(Object o) {
+        if (!(o instanceof Rekening)) {
+            return false;
+        }
+        var rek = (Rekening) o;
+    return rekeningNummer.equals(rek.rekeningNummer);
     }
 }
 
