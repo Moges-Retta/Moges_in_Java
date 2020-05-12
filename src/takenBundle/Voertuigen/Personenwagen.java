@@ -52,4 +52,5 @@ public class Personenwagen extends Voertuig{
     public double getKyotoScore(){
         return getGegmVerbruik()*getPk()/getAantalPassagiers();
     }
+
 }
