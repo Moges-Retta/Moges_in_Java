@@ -1,6 +1,6 @@
 package takenBundle.Voertuigen;
 
-public class Vrachtwagen extends Voertuig{
+public class Vrachtwagen extends Voertuig implements Vervuiler{
     private float maxLading = 10_000F;
     public Vrachtwagen(){
         setMaxLading(maxLading);
@@ -34,5 +34,10 @@ public class Vrachtwagen extends Voertuig{
     @Override
     public double getKyotoScore(){
         return getGegmVerbruik()*getPk()/getMaxLading()/1000.0F;
+    }
+
+    @Override
+    public double berekenVervuiling() {
+        return getKyotoScore()*20;
     }
 }

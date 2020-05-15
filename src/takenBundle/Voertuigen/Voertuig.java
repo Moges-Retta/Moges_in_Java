@@ -1,6 +1,6 @@
 package takenBundle.Voertuigen;
 
-public abstract class Voertuig {
+public abstract class Voertuig implements Privaat,Milleu{
     private String polishouder;
     private float kostprijs;
     private int pk;
@@ -73,4 +73,14 @@ public abstract class Voertuig {
                 "gegmVerbruik " +getGegmVerbruik()+"\n De nummerplaat: "+getNummerplaat());
     }
     public abstract double getKyotoScore();
+
+    @Override
+    public void geefPrivateData() {
+        System.out.println(getPolishouder()+";" +getNummerplaat());
+    }
+
+    @Override
+    public void geefMilieuData() {
+        System.out.println(getPk() +";" + getKostprijs() +";"+ getGegmVerbruik());
+    }
 }

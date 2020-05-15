@@ -30,5 +30,33 @@ public class VoertuigMain {
             System.out.println("De kyotoscore van " + (voertuig instanceof Vrachtwagen?"Personswagen":"Vrachwaagen")+
                      voertuig.getKyotoScore());
             }
+        var vervuilers = new Vervuiler[4];
+        vervuilers[0] =  new Vrachtwagen();
+        vervuilers[1] = new Vrachtwagen(3,5,"moges",2000F,20,2,"TEB688");
+        vervuilers[2] = new Personenwagen(3);
+        vervuilers[3] = new Personenwagen(3,5,"moges",200F,20,2,"TEB688");
+        for(var vervuiler:vervuilers){
+            System.out.println(vervuiler);
+            System.out.println("De vervuiling van " + (vervuiler instanceof Vrachtwagen?"Personswagen":"Vrachwaagen")+
+                    vervuiler.berekenVervuiling());
+        }
+
+        var privaats = new Privaat[4];
+        privaats[0] =  new Vrachtwagen();
+        privaats[1] = new Vrachtwagen(3,5,"moges",2000F,20,2,"TEB688");
+        privaats[2] = new Personenwagen(3);
+        privaats[3] = new Personenwagen(3,5,"moges",200F,20,2,"TEB688");
+        for(var privaat:privaats){
+            privaat.geefPrivateData();
+        }
+
+        var Milleus = new Milleu[4];
+        Milleus[0] =  new Vrachtwagen();
+        Milleus[1] = new Vrachtwagen(3,5,"moges",2000F,20,2,"TEB688");
+        Milleus[2] = new Personenwagen(3);
+        Milleus[3] = new Personenwagen(3,5,"moges",200F,20,2,"TEB688");
+        for(var Milleu:Milleus){
+            Milleu.geefMilieuData();
+        }
     }
 }

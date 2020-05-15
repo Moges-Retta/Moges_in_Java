@@ -1,6 +1,6 @@
 package takenBundle.Voertuigen;
 
-public class Personenwagen extends Voertuig{
+public class Personenwagen extends Voertuig implements Vervuiler{
     private int aantalDeuren = 4;
     private int aantalPassagiers = 5;
     public  Personenwagen(){
@@ -53,4 +53,8 @@ public class Personenwagen extends Voertuig{
         return getGegmVerbruik()*getPk()/getAantalPassagiers();
     }
 
+    @Override
+    public double berekenVervuiling() {
+        return getKyotoScore()*5;
+    }
 }
