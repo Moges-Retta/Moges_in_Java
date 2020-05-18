@@ -1,4 +1,4 @@
-package takenBundle.Voorwerpen;
+package be.vdab.util;
 
 public interface Voorwerp {
     void gegevensTonen();

@@ -1,6 +1,8 @@
-package takenBundle.Voorwerpen;
+package be.vdab.voorwerpen;
 
-public class Leesboek extends Boek implements Voorwerp{
+import be.vdab.util.Voorwerp;
+
+public class Leesboek extends Boek implements Voorwerp {
     private String onderwerp;
     private float winstmarge = 1.5F;
 

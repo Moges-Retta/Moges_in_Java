@@ -1,4 +1,4 @@
-package takenBundle.Voorwerpen;
+package be.vdab.voorwerpen;
 
 public class Boek {
     private String title;

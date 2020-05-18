@@ -1,6 +1,8 @@
-package takenBundle.Voorwerpen;
+package be.vdab.voorwerpen;
 
-public class Boekenrek implements Voorwerp{
+import be.vdab.util.Voorwerp;
+
+public class Boekenrek implements Voorwerp {
     private String eigenaar = "VDAB";
     private int hoogte;
     private int breedte;
